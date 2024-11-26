@@ -1,4 +1,7 @@
+package managers;
+
 import exception.MaxTokenPresent;
+import locks.CountingSemaphore;
 
 public class CountingSemaphoreManager {
     private final CountingSemaphore semaphore;

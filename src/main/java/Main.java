@@ -1,12 +1,14 @@
-import java.util.Random;
+import managers.ReadWriteLockManager;
 
 public class Main {
     public static void main(String[] args) {
-        Random random = new Random();
-        CountingSemaphoreManager manager = new CountingSemaphoreManager(3);
-        for(int i=0;i<20;i++) {
-            long waitTime = random.nextInt(50) * 1000;
-            manager.startThread(waitTime);
+        ReadWriteLockManager manager = new ReadWriteLockManager();
+        for (int i = 0; i <= 10; i++) {
+            if(i%3 == 0) {
+                manager.testWriteLock();
+            } else {
+                manager.testReadLock();
+            }
         }
     }
 }

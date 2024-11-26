@@ -1,3 +1,5 @@
+package locks;
+
 import exception.MaxTokenPresent;
 import exception.NoAvailableToken;
 
