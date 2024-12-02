@@ -1,14 +1,11 @@
+import managers.BarrierTest;
 import managers.ReadWriteLockManager;
 
 public class Main {
     public static void main(String[] args) {
-        ReadWriteLockManager manager = new ReadWriteLockManager();
-        for (int i = 0; i <= 10; i++) {
-            if(i%3 == 0) {
-                manager.testWriteLock();
-            } else {
-                manager.testReadLock();
-            }
+        BarrierTest test = new BarrierTest(3);
+        for (int i = 0; i < 12; i++) {
+            test.addThread();
         }
     }
 }
